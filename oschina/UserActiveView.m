@@ -2,7 +2,7 @@
 //  UserActiveView.m
 //  oschina
 //
-//  Created by wangjun on 12-7-4.
+//  Created by niuyuzhou on 12-7-4.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 

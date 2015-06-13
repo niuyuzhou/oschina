@@ -2,7 +2,7 @@
 //  UserBlogsView.m
 //  oschina
 //
-//  Created by wangjun on 12-7-3.
+//  Created by niuyuzhou on 12-7-3.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
