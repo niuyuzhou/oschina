@@ -1,0 +1,108 @@
+<style>
+    .audio .wechat-audio{display:inline-block;vertical-align: middle;cursor:pointer;background:#F1F2F3;border-radius:8px;width:150px;}
+    .audio .wechat-audio img{height:35px;float:left;}
+    .audio .wechat-audio .duration{font-size: 14px;color: #15a230;font-style: normal;margin-left: 40px;display: inline-block;line-height:35px;height:35px;float:left;}
+</style>
+<p class='audio' style="padding:5px 0px;">
+    <i class='wechat-audio'  webm='%@?avthumb/webm/ab/128k/ar/44100' mp3='%@?avthumb/mp3' play='false' title="仅支持HTML5浏览器播放">
+        <img src="http://www.oschina.net/img/audio0.png" src-0="http://www.oschina.net/img/audio0.png"  src-1="http://www.oschina.net/img/audio1.png" src-2="http://www.oschina.net/img/audio2.png" src-3="http://www.oschina.net/img/audio3.png" height="35"/>
+        <span class="duration"></span>
+    </i>
+</p>
+<script>
+var AudioPlayer = function(options){
+		var audio = document.createElement("audio");
+		if(!audio)
+        throw new Error("init audio failed!");
+		if(options.autoplay)
+        audio.setAttribute("autoplay",true);
+		if(options.controls)
+        audio.setAttribute("controls",true);
+		if(options.loop)
+        audio.setAttribute("loop",true);
+		if(options.preload)
+        audio.setAttribute("preload",true);
+		var html = "";
+		if(options.ogg)
+        html+="<source src='"+options.ogg+"' type='audio/ogg'>";
+		if(options.webm)
+        html+="<source src='"+options.webm+"' type='audio/webm'>";
+		if(options.mp3)
+        html+="<source src='"+options.mp3+"' type='audio/mp3'>";
+		if(options.aac)
+        html+="<source src='"+options.aac+"' type='audio/aac'>";
+		html +="您的浏览器不支持HTML5！";
+		if(!audio.innerHTML || audio.innerHTML.length <= 0)
+        audio.innerHTML = html;
+		return {
+		    load :function(){
+				audio.load();
+			},
+			play :function(){
+				audio.play();
+			},
+			pause : function(){
+				audio.pause();
+			},
+			bind : function(event,handler){
+				try{
+					audio.addEventListener(event,handler,false);
+				}catch(e){
+					audio[event] = handler;
+				}
+			},
+			duration : function(){
+				return audio.duration;
+			}
+		}
+	};
+var Audio = undefined;
+$(function(){
+  $(".wechat-audio").click(function(){
+                           var thiz = $(this);
+                           var bod = thiz.closest("li");
+                           var ogg = thiz.attr("ogg");
+                           var mp3 = thiz.attr("mp3");
+                           var webm = thiz.attr("webm");
+                           var play = thiz.attr("play");
+                           var audio_exist = !!Audio;
+                           var audio = Audio || new AudioPlayer({
+                                                                   mp3:mp3,
+                                                                   ogg:ogg,
+                                                                   webm:webm
+                                                                   });
+                           var img = thiz.find("img");
+                           audio.bind("ended",function(){
+                                      thiz.attr("play","false");
+                                      img.attr("src",img.attr("src-0"));
+                                      audio.load();
+                                      });
+                           if(!audio_exist){
+                           img.data('index',0);
+                            audio.bind('timeupdate',function(){
+                                       var index = +img.data('index');
+                                       var i = index == 4?0:index+1;
+                                       img.data('index',i)
+                                       var over = thiz.attr("play") == "false";
+                                       var src_idx = 'src-'+ (over ? 0 : i);
+                                       var img_src = img.attr(src_idx);
+                                       img.attr("src",img_src);
+                                    });
+                           audio.bind("loadedmetadata",function(){
+                                      var dur = thiz.find(".duration").text();
+                                      if(dur.length==0)
+                                      thiz.find(".duration").text(Math.ceil(audio.duration())+"s");
+                                      });
+                           }
+                           if(play == "false"){
+                            thiz.attr("play","true");
+                            audio.play();
+                           }else{
+                           thiz.attr("play","false");
+                           audio.pause();  
+                           }
+                           Audio = audio;
+                           });
+});
+
+</script>
