@@ -8,6 +8,7 @@
 
 #import "MyView.h"
 
+
 @implementation MyView
 @synthesize imgGender;
 @synthesize lblName;
