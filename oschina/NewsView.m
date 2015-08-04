@@ -244,7 +244,7 @@
     else {
         NewsBase *parent = (NewsBase *)self.parentViewController;
         self.parentViewController.title = [parent getSegmentTitle];
-        self.parentViewController.tabBarItem.title = @"综合";
+        self.parentViewController.tabBarItem.title = @"Roundup";
         if (self.catalog == 1) {
             News *n = [news objectAtIndex:row];
             if (n) 

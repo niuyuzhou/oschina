@@ -33,7 +33,7 @@
     [self reload:YES];
     
     if (self.authorName.length > 0) {
-        self.navigationItem.title = [NSString stringWithFormat:@"%@的博客", self.authorName];
+        self.navigationItem.title = [NSString stringWithFormat:@"%@'s Blog", self.authorName];
     }
     //适配iOS7uinavigationbar遮挡tableView的问题
     if([[[UIDevice currentDevice]systemVersion]floatValue]>=7.0)

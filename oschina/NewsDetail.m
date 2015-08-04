@@ -24,7 +24,7 @@
 #pragma mark - View lifecycle
 - (void)viewDidAppear:(BOOL)animated
 {
-    self.parentViewController.navigationItem.title = @"资讯详情";
+    self.parentViewController.navigationItem.title = @"News Details";
     if (self.singleNews) {
         [self refreshFavorite:self.singleNews];
     }
@@ -81,20 +81,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tabBarItem.title = @"资讯详情";
+    self.tabBarItem.title = @"News Details";
     self.tabBarItem.image = [UIImage imageNamed:@"detail"];
     //WebView的背景颜色去除
     [Tool clearWebViewBackground:self.webView];
     
     self.singleNews = [[SingleNews alloc] init];
-    self.navigationController.title = @"资讯详情";
+    self.navigationController.title = @"News Details";
     self.webView.delegate = self;
     [self.webView loadHTMLString:@"" baseURL:nil];
     
     if ([Config Instance].isNetworkRunning) 
     {
         MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
-        [Tool showHUD:@"正在加载" andView:self.view andHUD:hud];
+        [Tool showHUD:@"Downloading..." andView:self.view andHUD:hud];
         
         NSString *url = [NSString stringWithFormat:@"%@?id=%d",api_news_detail, newsID];
         [[AFOSCClient sharedClient] getPath:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {

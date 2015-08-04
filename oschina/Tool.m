@@ -200,7 +200,7 @@ static char base64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123
         case 0:
         {
             UITabBarController *newsTab = [[UITabBarController alloc] init];
-            newsTab.title = @"资讯详情";
+            newsTab.title = @"News Details";
             NewsDetail *nDetail = [[NewsDetail alloc] init];
             nDetail.newsID = news._id;
             nDetail.isNextPage = isNextPage;
@@ -257,7 +257,7 @@ static char base64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123
         case 3:
         {
             UITabBarController *blogTab = [[UITabBarController alloc] init];
-            blogTab.title = @"博客详情";
+            blogTab.title = @"Blogs Details";
             
             BlogDetail *blog = [[BlogDetail alloc] init];
             blog.blogID = [news.attachment intValue];
@@ -354,7 +354,7 @@ static char base64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123
 
     UserBlogsView *bv = [[UserBlogsView alloc] init];
     bv.authorUID = uid;
-    bv.tabBarItem.title = @"博客";
+    bv.tabBarItem.title = @"Blog";
     bv.tabBarItem.image = [UIImage imageNamed:@"info"];
     
     UserActiveView *av = [[UserActiveView alloc] init];
@@ -380,7 +380,7 @@ static char base64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123
     
     UserBlogsView *bv = [[UserBlogsView alloc] init];
     bv.authorName = name;
-    bv.tabBarItem.title = @"博客";
+    bv.tabBarItem.title = @"Blog";
     bv.tabBarItem.image = [UIImage imageNamed:@"info"];
     
     UserActiveView *av = [[UserActiveView alloc] init];

@@ -22,7 +22,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"博客详情";
+    self.title = @"Blogs Details";
     [Tool clearWebViewBackground:webView];
     self.webView.delegate = self;
     [self.webView loadHTMLString:@"" baseURL:nil];
@@ -35,7 +35,7 @@
     if ([Config Instance].isNetworkRunning) {
 
         MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
-        [Tool showHUD:@"正在加载" andView:self.view andHUD:hud];
+        [Tool showHUD:@"Downloading..." andView:self.view andHUD:hud];
         NSString *url = [NSString stringWithFormat:@"%@?id=%d",api_blog_detail, blogID];
         [[AFOSCClient sharedClient] getPath:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             
@@ -84,10 +84,10 @@
 - (void)clickFavorite:(id)sender
 {
     UIBarButtonItem * btn = (UIBarButtonItem *)sender;
-    BOOL isFav = [btn.title isEqualToString:@"收藏此博客"];
+    BOOL isFav = [btn.title isEqualToString:@"Store up this blog"];
 
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
-    [Tool showHUD:isFav ? @"正在添加收藏":@"正在删除收藏" andView:self.view andHUD:hud];
+    [Tool showHUD:isFav ? @"Storing up...":@"Romoving..." andView:self.view andHUD:hud];
     [[AFOSCClient sharedClient]getPath:isFav?api_favorite_add:api_favorite_delete 
                             parameters:[NSDictionary dictionaryWithObjectsAndKeys:
                                         [NSString stringWithFormat:@"%d", [Config Instance].getUID],@"uid",
@@ -106,7 +106,7 @@
                                 {
                                     case 1:
                                     {
-                                        btnFavorite.title = isFav ? @"取消收藏" : @"收藏此博客";
+                                        btnFavorite.title = isFav ? @"Cancel" : @"Store up";
                                         singleBlog.favorite = !singleBlog.favorite;
                                     }
                                         break;
@@ -120,7 +120,7 @@
                                 }
                             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                 [hud hide:YES];
-                                [Tool ToastNotification:@"添加收藏失败" andView:self.view andLoading:NO andIsBottom:NO];
+                                [Tool ToastNotification:@"Store up failed" andView:self.view andLoading:NO andIsBottom:NO];
                             }];
 
 }

@@ -24,12 +24,12 @@
 - (void)myInit
 {
     self.tabBarItem.image = [UIImage imageNamed:@"info"];
-    self.tabBarItem.title = @"综合";
+    self.tabBarItem.title = @"Roundup";
 
     NSArray *segmentTextContent = [NSArray arrayWithObjects:
-                                   @"资讯",
-                                   @"博客",
-                                   @"推荐阅读",
+                                   @"News",
+                                   @"Blogs",
+                                   @"Recommended",
                                    nil];
     self.segment_title = [[UISegmentedControl alloc] initWithItems:segmentTextContent];
     self.segment_title.selectedSegmentIndex = 0;
@@ -89,11 +89,11 @@
 {
     switch (self.segment_title.selectedSegmentIndex) {
         case 0:
-            return @"资讯";
+            return @"News";
         case 1:
-            return @"博客";
+            return @"Blogs";
         case 2:
-            return @"推荐阅读";
+            return @"Recommended";
     }
     return @"";
 }
