@@ -35,10 +35,13 @@
     MBProgressHUD * hud;
     
 }
+@property (strong, nonatomic) IBOutlet UILabel *lableSina;
+
 @property (strong, nonatomic) IBOutlet UIImageView *imgSina;
-@property (strong, nonatomic) IBOutlet UIImageView *imgQQ;
-@property (strong, nonatomic) IBOutlet UIImageView *imgWechatCircle;
-@property (strong, nonatomic) IBOutlet UIImageView *imgWechatFriend;
+@property (strong, nonatomic) IBOutlet UIImageView *imgTwitter;
+//@property (strong, nonatomic) IBOutlet UIImageView *imgQQ;
+//@property (strong, nonatomic) IBOutlet UIImageView *imgWechatCircle;
+//@property (strong, nonatomic) IBOutlet UIImageView *imgWechatFriend;
 
 
 @property (copy,nonatomic) NSString * url;

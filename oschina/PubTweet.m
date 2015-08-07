@@ -31,9 +31,9 @@
     
     NSMutableArray *rightBarButtonArray = [[NSMutableArray alloc] initWithCapacity:2];
 
-    UIBarButtonItem *btnPic = [[UIBarButtonItem alloc] initWithTitle:@"＋图片" style:UIBarButtonItemStyleBordered target:self action:@selector(clickImgs:)];
+    UIBarButtonItem *btnPic = [[UIBarButtonItem alloc] initWithTitle:@"＋Image" style:UIBarButtonItemStyleBordered target:self action:@selector(clickImgs:)];
     [rightBarButtonArray addObject:btnPic];
-    UIBarButtonItem *btnPub = [[UIBarButtonItem alloc] initWithTitle:@"动弹一下" style:UIBarButtonItemStyleBordered target:self action:@selector(click_PubTweet:)];
+    UIBarButtonItem *btnPub = [[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStyleBordered target:self action:@selector(click_PubTweet:)];
     [rightBarButtonArray addObject:btnPub];
 
     if(IS_IOS7)
@@ -205,21 +205,21 @@
 #pragma mark - 选择图片
 - (IBAction)clickImgs:(id)sender 
 {
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"请选择图片来源" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"返回" otherButtonTitles:@"图库",@"拍照", nil];
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Please choose image" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"Return" otherButtonTitles:@"Photos",@"Camera", nil];
     [sheet showInView:[UIApplication sharedApplication].keyWindow];
 }
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     //获取点击按钮的标题
     NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
-    if ([buttonTitle isEqualToString:@"拍照"])
+    if ([buttonTitle isEqualToString:@"Camera"])
     {
         UIImagePickerController *imgPicker = [UIImagePickerController new];
         imgPicker.delegate = self;
         imgPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
         [self presentModalViewController:imgPicker animated:YES];
     }
-    else if([buttonTitle isEqualToString:@"图库"])
+    else if([buttonTitle isEqualToString:@"Photos"])
     {
         UIImagePickerController *imgPicker = [UIImagePickerController new];
         imgPicker.delegate = self;

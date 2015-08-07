@@ -10,16 +10,13 @@
 #import "RegexKitLite.h"
 
 @implementation ShareView
-@synthesize imgSina;
-@synthesize imgQQ;
-@synthesize imgWechatCircle;
-@synthesize imgWechatFriend;
+
 @synthesize url;
 @synthesize content;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    NSString *titleStr=@"分享";
+    NSString *titleStr=@"Share";
     self.tabBarItem.title = titleStr;
     self.tabBarItem.image = [UIImage imageNamed:@"share"];
     self.title = titleStr;
@@ -30,7 +27,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    self.parentViewController.navigationItem.title = @"分享";
+    self.parentViewController.navigationItem.title = @"Share";
     
     self.parentViewController.navigationItem.rightBarButtonItem = nil;
 }
@@ -41,46 +38,59 @@
 {
     [super viewDidLoad];
 
-    self.tabBarItem.title = @"分享";
+    self.tabBarItem.title = @"Share";
     self.tabBarItem.image = [UIImage imageNamed:@"share"];
-    self.title = @"分享";
-    self.navigationController.title = @"分享";
-    self.parentViewController.navigationController.title = @"分享";
+    self.title = @"Share";
+    self.navigationController.title = @"Share";
+    self.parentViewController.navigationController.title = @"Share";
     
+    _lableSina = [[UILabel alloc] initWithFrame:CGRectZero];
+    _lableSina.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:18];
+    _lableSina.textColor = [UIColor colorWithRed:0x66/255. green:0x33/255. blue:0x99/255. alpha:2];
+    _lableSina.backgroundColor = [UIColor whiteColor];
+    _lableSina.text = @"Share to WeiBo";
+    _lableSina.textAlignment = NSTextAlignmentCenter;
+    
+    _imgSina = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"share_weixin"]];
     tapSina = [[UITap alloc] initWithTarget:self action:@selector(click_weibo:)];
-    [imgSina addGestureRecognizer:tapSina];
+    [_imgSina addGestureRecognizer:tapSina];
     
-    tapQQ = [[UITap alloc] initWithTarget:self action:@selector(click_qqshare:)];
-    [imgQQ addGestureRecognizer:tapQQ];
     
-    tapWechatCircle = [[UITap alloc] initWithTarget:self action:@selector(click_wechatCircle:)];
-    [imgWechatCircle addGestureRecognizer:tapWechatCircle];
     
-    tapWechatFriend = [[UITap alloc] initWithTarget:self action:@selector(click_wechatFriend:)];
-    [imgWechatFriend addGestureRecognizer:tapWechatFriend];
+//    tapQQ = [[UITap alloc] initWithTarget:self action:@selector(click_qqshare:)];
+//    [imgQQ addGestureRecognizer:tapQQ];
+    
+//    tapWechatCircle = [[UITap alloc] initWithTarget:self action:@selector(click_wechatCircle:)];
+//    [imgWechatCircle addGestureRecognizer:tapWechatCircle];
+    
+//    tapWechatFriend = [[UITap alloc] initWithTarget:self action:@selector(click_wechatFriend:)];
+//    [imgWechatFriend addGestureRecognizer:tapWechatFriend];
     
     self.view.backgroundColor = [Tool getBackgroundColor];
     
     if (IS_IPHONE_5) {
-        self.imgSina.frame = CGRectMake(40, 95, 240, 44);
-        self.imgQQ.frame = CGRectMake(40, 175, 240, 44);
-        self.imgWechatCircle.frame = CGRectMake(40, 255, 240, 44);
-        self.imgWechatFriend.frame = CGRectMake(40, 335, 240, 44);
+        self.lableSina.frame = CGRectMake(40, 95, 240, 44);
+//        self.imgSina.frame = CGRectMake(40, 95, 240, 44);
+//        self.imgQQ.frame = CGRectMake(40, 175, 240, 44);
+//        self.imgWechatCircle.frame = CGRectMake(40, 255, 240, 44);
+//        self.imgWechatFriend.frame = CGRectMake(40, 335, 240, 44);
     }else{
-        self.imgSina.frame = CGRectMake(40, 65, 240, 44);
-        self.imgQQ.frame = CGRectMake(40, 135, 240, 44);
-        self.imgWechatCircle.frame = CGRectMake(40, 205, 240, 44);
-        self.imgWechatFriend.frame = CGRectMake(40, 275, 240, 44);
+        self.lableSina.frame = CGRectMake(40, 65, 240, 44);
+//        self.imgSina.frame = CGRectMake(40, 65, 240, 44);
+//        self.imgQQ.frame = CGRectMake(40, 135, 240, 44);
+//        self.imgWechatCircle.frame = CGRectMake(40, 205, 240, 44);
+//        self.imgWechatFriend.frame = CGRectMake(40, 275, 240, 44);
     }
-    
+    //[self.view addSubview:_imgSina];
+    [self.view addSubview:_lableSina];
 }
 
 - (void)viewDidUnload
 {
     [self setImgSina:nil];
-    [self setImgQQ:nil];
-    [self setImgWechatCircle:nil];
-    [self setImgWechatFriend:nil];
+//    [self setImgQQ:nil];
+//    [self setImgWechatCircle:nil];
+//    [self setImgWechatFriend:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -129,6 +139,7 @@
 
 - (void) sendLinkContent:(BOOL)toCircle
 {
+/*
     WXMediaMessage *message = [WXMediaMessage message];
     message.title = [Config Instance].shareObject.title;
     message.description = [Config Instance].shareObject.title;
@@ -167,6 +178,7 @@
         req.message = message;
         [WXApi sendReq:req];
     }
+*/
 }
 
 @end

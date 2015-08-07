@@ -17,9 +17,9 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"更多";
-        self.tabBarItem.title = @"更多";
-        self.tabBarItem.image = [UIImage imageNamed:@"more"];
+        self.title = @"Setting";
+        self.tabBarItem.title = @"Setting";
+        self.tabBarItem.image = [UIImage imageNamed:@"setting"];
     }
     return self;
 }
@@ -33,20 +33,20 @@
     self.settingsInSection = [[NSMutableDictionary alloc] initWithCapacity:3];
     BOOL isLogin = [Config Instance].isCookie;
     NSArray *first = [[NSArray alloc] initWithObjects:
-                      [[SettingModel alloc] initWith:isLogin ? @"我的资料 (收藏/关注/粉丝)":@"登录" andImg:@"account" andTag:1 andTitle2:nil],
-                      [[SettingModel alloc] initWith:@"扫一扫" andImg:@"scan" andTag:10 andTitle2:nil],
-                      [[SettingModel alloc] initWith: @"注销" andImg:@"exit" andTag:2 andTitle2:nil],
+                      [[SettingModel alloc] initWith:isLogin ? @"Profile":@"Login" andImg:@"account" andTag:1 andTitle2:nil],
+                      [[SettingModel alloc] initWith:@"Scan" andImg:@"scan" andTag:10 andTitle2:nil],
+                      [[SettingModel alloc] initWith: @"Logout" andImg:@"exit" andTag:2 andTitle2:nil],
                       nil];
     NSArray *second = [[NSArray alloc] initWithObjects:
-                       [[SettingModel alloc] initWith:@"软件" andImg:@"software" andTag:3 andTitle2:nil],
-                       [[SettingModel alloc] initWith:@"搜索" andImg:@"search" andTag:4 andTitle2:nil],
+                       //[[SettingModel alloc] initWith:@"软件" andImg:@"software" andTag:3 andTitle2:nil],
+                       [[SettingModel alloc] initWith:@"Search" andImg:@"search" andTag:4 andTitle2:nil],
                        nil];
     NSArray *third = [[NSArray alloc] initWithObjects:
-                      [[SettingModel alloc] initWith:@"意见反馈" andImg:@"feedback" andTag:5 andTitle2:nil],
-                      [[SettingModel alloc] initWith:@"官方微博" andImg:@"weibo" andTag:6 andTitle2:nil],
-                      [[SettingModel alloc] initWith:@"关于我们" andImg:@"logo" andTag:7 andTitle2:nil],
-                      [[SettingModel alloc] initWith:@"检测更新" andImg:@"setting" andTag:8 andTitle2:nil],
-                      [[SettingModel alloc] initWith:@"给我评分" andImg:@"rating" andTag:9 andTitle2:nil],
+                      //[[SettingModel alloc] initWith:@"意见反馈" andImg:@"feedback" andTag:5 andTitle2:nil],
+                      [[SettingModel alloc] initWith:@"Weibo" andImg:@"weibo" andTag:6 andTitle2:nil],
+                      [[SettingModel alloc] initWith:@"About Me" andImg:@"logo" andTag:7 andTitle2:nil],
+                      //[[SettingModel alloc] initWith:@"检测更新" andImg:@"setting" andTag:8 andTitle2:nil],
+                      //[[SettingModel alloc] initWith:@"给我评分" andImg:@"rating" andTag:9 andTitle2:nil],
                       nil];
     [self.settingsInSection setObject:first forKey:@"帐号"];
     [self.settingsInSection setObject:second forKey:@"反馈"];
@@ -75,7 +75,7 @@
 {
     NSArray *first = [self.settingsInSection objectForKey:@"帐号"];
     SettingModel *firstLogin = [first objectAtIndex:0];
-    firstLogin.title = [Config Instance].isCookie ? @"我的资料 (收藏/关注/粉丝)" : @"登录";
+    firstLogin.title = [Config Instance].isCookie ? @"Profile" : @"Login";
     [self.tableSettings reloadData];
 }
 #pragma TableView的处理
@@ -243,7 +243,7 @@
             }
             else
             {
-                UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"您当前已经是最新版本" delegate:self cancelButtonTitle:@"返回" otherButtonTitles:nil, nil];
+                UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"您当前已经是最新版本" delegate:self cancelButtonTitle:@"Return" otherButtonTitles:nil, nil];
                 [alert show];
             }
         }

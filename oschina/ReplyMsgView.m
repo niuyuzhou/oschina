@@ -42,7 +42,7 @@ bool textViewIsEmpty;
     
     self.view.backgroundColor = [Tool getBackgroundColor];
     
-    self.txtReply.text = @"点击此处输入评论";
+    self.txtReply.text = @"Click here to comment";
     self.txtReply.textColor = [UIColor lightGrayColor];
     textViewIsEmpty =YES;
     
@@ -80,7 +80,7 @@ bool textViewIsEmpty;
         txtReply.text = commentBeforeLogin;
         commentBeforeLogin = nil;
     }
-    self.txtReply.text = @"点击此处输入评论";
+    self.txtReply.text = @"Click here to comment";
     self.txtReply.textColor = [UIColor lightGrayColor];
     textViewIsEmpty =YES;
 }
@@ -265,7 +265,7 @@ bool textViewIsEmpty;
     if(self.txtReply.text.length == 0)
     {
         self.txtReply.textColor = [UIColor lightGrayColor];
-        self.txtReply.text = @"点击此处输入评论";
+        self.txtReply.text = @"Click here to comment";
         textViewIsEmpty = YES;
     }
 }

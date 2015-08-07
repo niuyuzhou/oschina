@@ -211,13 +211,13 @@
             if (self.catalog <= 1) {
                 News *n = [news objectAtIndex:[indexPath row]];
                 cell.lblTitle.text = n.title;
-                cell.lblAuthor.text = [NSString stringWithFormat:@"%@ 发布于 %@ (%d评)", n.author, n.pubDate, n.commentCount];
+                cell.lblAuthor.text = [NSString stringWithFormat:@"%@ pulished %@ (%dCM)", n.author, n.pubDate, n.commentCount];
             }
             else
             {
                 BlogUnit *b = [news objectAtIndex:indexPath.row];
                 cell.lblTitle.text = b.title;
-                cell.lblAuthor.text = [NSString stringWithFormat:@"%@ %@ %@ (%d评)", b.authorName,b.documentType==1?@"原创":@"转载", b.pubDate, b.commentCount];
+                cell.lblAuthor.text = [NSString stringWithFormat:@"%@ %@ %@ (%dCM)", b.authorName,b.documentType==1?@"wrote":@"reprinted", b.pubDate, b.commentCount];
             }
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             return cell;
@@ -244,7 +244,7 @@
     else {
         NewsBase *parent = (NewsBase *)self.parentViewController;
         self.parentViewController.title = [parent getSegmentTitle];
-        self.parentViewController.tabBarItem.title = @"Roundup";
+        self.parentViewController.tabBarItem.title = @"News Feed";
         if (self.catalog == 1) {
             News *n = [news objectAtIndex:row];
             if (n) 

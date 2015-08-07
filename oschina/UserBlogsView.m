@@ -162,7 +162,7 @@
             BlogUnit *n = [blogs objectAtIndex:indexPath.row];
             cell.lblTitle.font = [UIFont boldSystemFontOfSize:15.0];
             cell.lblTitle.text = n.title;
-            cell.lblAuthor.text = [NSString stringWithFormat:@"%@ %@ %@ (%d评)", n.authorName,n.documentType == 1 ? @"原创":@"转载", n.pubDate, n.commentCount];
+            cell.lblAuthor.text = [NSString stringWithFormat:@"%@ %@ %@ (%dCM)", n.authorName,n.documentType == 1 ? @"wrote":@"reprinted", n.pubDate, n.commentCount];
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             //添加长按删除功能 
             [cell initGR];

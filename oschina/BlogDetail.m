@@ -35,7 +35,7 @@
     if ([Config Instance].isNetworkRunning) {
 
         MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
-        [Tool showHUD:@"Downloading..." andView:self.view andHUD:hud];
+        [Tool showHUD:@"Loading..." andView:self.view andHUD:hud];
         NSString *url = [NSString stringWithFormat:@"%@?id=%d",api_blog_detail, blogID];
         [[AFOSCClient sharedClient] getPath:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             
@@ -157,7 +157,7 @@
 }
 - (void)refreshFavorite:(Blog *)b
 {
-    btnFavorite = [[UIBarButtonItem alloc] initWithTitle:b.favorite ? @"取消收藏" : @"收藏此博客" style:UIBarButtonItemStyleBordered target:self action:@selector(clickFavorite:)];
+    btnFavorite = [[UIBarButtonItem alloc] initWithTitle:b.favorite ? @"Cancel" : @"Store up" style:UIBarButtonItemStyleBordered target:self action:@selector(clickFavorite:)];
     self.parentViewController.navigationItem.rightBarButtonItem = btnFavorite;
 }
 

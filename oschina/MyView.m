@@ -22,7 +22,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = @"我的资料";
+    self.navigationItem.title = @"Profile";
     self.lblName.font = [UIFont boldSystemFontOfSize:20.0];
     self.egoImgView = [[EGOImageView alloc] initWithFrame:CGRectMake(18, 16, 50, 50)];
     self.egoImgView.image = [UIImage imageNamed:@"big_avatar_loading.png"];
@@ -60,21 +60,21 @@
 #pragma mark 更新头像
 - (IBAction)clickUpdatePortrait:(id)sender {
     
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"请选择图片来源" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"返回" otherButtonTitles:@"图库",@"拍照", nil];
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Please choose image" delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"Return" otherButtonTitles:@"Photos",@"Camera", nil];
     [sheet showInView:[UIApplication sharedApplication].keyWindow];
 }
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     //获取点击按钮的标题
     NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
-    if ([buttonTitle isEqualToString:@"拍照"])
+    if ([buttonTitle isEqualToString:@"Camera"])
     {
         UIImagePickerController *imgPicker = [UIImagePickerController new];
         imgPicker.delegate = self;
         imgPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
         [self presentModalViewController:imgPicker animated:YES];
     }
-    else if([buttonTitle isEqualToString:@"图库"])
+    else if([buttonTitle isEqualToString:@"Photos"])
     {
         UIImagePickerController *imgPicker = [UIImagePickerController new];
         imgPicker.delegate = self;

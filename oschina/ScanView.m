@@ -87,7 +87,7 @@
     NSNumber * type = [resultDictionary objectForKey:@"type"];
     NSNumber * requireLogin = [resultDictionary objectForKey:@"require_login"];
     if (url == nil || title == nil || type == nil || requireLogin == nil) {
-        UIAlertView * failAlert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"无效二维码" delegate:nil cancelButtonTitle:@"返回" otherButtonTitles:nil, nil];
+        UIAlertView * failAlert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"无效二维码" delegate:nil cancelButtonTitle:@"Return" otherButtonTitles:nil, nil];
         [failAlert show];
         return;
     }

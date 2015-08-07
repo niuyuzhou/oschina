@@ -26,13 +26,13 @@
 - (void)myInit
 {
     self.tabBarItem.image = [UIImage imageNamed:@"active"];
-    self.tabBarItem.title = @"我的";
+    self.tabBarItem.title = @"Notifications";
     self.titles = [NSArray arrayWithObjects:
-                   @"所有",
-                   @"@我",
-                   @"评论",
-                   @"我自己",
-                   @"留言",
+                   @"All",
+                   @"@Me",
+                   @"CM",
+                   @"Self",
+                   @"Notice",
                    nil];
     self.segment_Title = [[UISegmentedControl alloc] initWithItems:self.titles];
     self.segment_Title.selectedSegmentIndex = 0;
@@ -90,7 +90,7 @@
     }
     //登录判断
     if ([Config Instance].isCookie == NO) {
-        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"请登录后查看信息" delegate:self cancelButtonTitle:@"返回" destructiveButtonTitle:nil otherButtonTitles:@"登录", nil];
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"请登录后查看信息" delegate:self cancelButtonTitle:@"Return" destructiveButtonTitle:nil otherButtonTitles:@"登录", nil];
         [sheet showInView:[UIApplication sharedApplication].keyWindow];
     }
     //如果已经登录 则判断是否是刚刚登录  如果是  则刷新
@@ -153,9 +153,9 @@
         {
             self.tabBarItem.badgeValue = nil;
         }
-        [self.segment_Title setTitle:notice.atmeCount ? [NSString stringWithFormat:@"@我(%d)", notice.atmeCount] : @"@我" forSegmentAtIndex:1];
-        [self.segment_Title setTitle:notice.reviewCount ? [NSString stringWithFormat:@"评论(%d)", notice.reviewCount] : @"评论" forSegmentAtIndex:2];
-        [self.segment_Title setTitle:notice.msgCount ? [NSString stringWithFormat:@"留言(%d)", notice.msgCount] : @"留言" forSegmentAtIndex:4];
+        [self.segment_Title setTitle:notice.atmeCount ? [NSString stringWithFormat:@"@Me(%d)", notice.atmeCount] : @"@Me" forSegmentAtIndex:1];
+        [self.segment_Title setTitle:notice.reviewCount ? [NSString stringWithFormat:@"评论(%d)", notice.reviewCount] : @"CM" forSegmentAtIndex:2];
+        [self.segment_Title setTitle:notice.msgCount ? [NSString stringWithFormat:@"留言(%d)", notice.msgCount] : @"Notice" forSegmentAtIndex:4];
         
         //优先级获取
         if (notice.atmeCount > 0) {
@@ -237,15 +237,15 @@
 {
     switch (self.segment_Title.selectedSegmentIndex) {
         case 0:
-            return @"所有";
+            return @"All";
         case 1:
-            return @"@我";
+            return @"@Me";
         case 2:
-            return @"评论";
+            return @"CM";
         case 3:
-            return @"我自己";
+            return @"Self";
         case 4:
-            return @"留言";
+            return @"Notice";
     }
     return @"";
 }

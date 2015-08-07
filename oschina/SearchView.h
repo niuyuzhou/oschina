@@ -2,7 +2,7 @@
 //  SearchView.h
 //  oschina
 //
-//  Created by wangjun on 12-5-10.
+//  Created by yuzhou niu on 12-5-10.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 

@@ -27,8 +27,8 @@
     
     NSArray *segmentTextContent = [NSArray arrayWithObjects:
                                    @"问答",
-                                   @"分享",
-                                   @"Roundup",
+                                   @"Share",
+                                   @"News Feed",
                                    @"职业",
                                    @"站务",
                                    nil];
@@ -105,9 +105,9 @@
         case 0:
             return @"问答";
         case 1:
-            return @"分享";
+            return @"Share";
         case 2:
-            return @"Roundup";
+            return @"News Feed";
         case 3:
             return @"职业";
         case 4:

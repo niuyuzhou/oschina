@@ -178,7 +178,7 @@ static char base64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123
 }
 + (void)noticeLogin:(UIView *)view andDelegate:(id)delegate andTitle:(NSString *)title
 {
-    UIActionSheet * loginSheet = [[UIActionSheet alloc] initWithTitle:title delegate:delegate cancelButtonTitle:@"返回" destructiveButtonTitle:nil otherButtonTitles:@"登录", nil];
+    UIActionSheet * loginSheet = [[UIActionSheet alloc] initWithTitle:title delegate:delegate cancelButtonTitle:@"Return" destructiveButtonTitle:nil otherButtonTitles:@"登录", nil];
 //    [loginSheet showInView:view];
     [loginSheet showInView:[UIApplication sharedApplication].keyWindow];
 }
@@ -207,7 +207,7 @@ static char base64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123
             nDetail.tabBarItem.image = [UIImage imageNamed:@"detail"];
             
             MessageSystemView *newsComments = [[MessageSystemView alloc] init];
-            newsComments.tabBarItem.title = @"评论";
+            newsComments.tabBarItem.title = @"CM";
             newsComments.tabBarItem.image = [UIImage imageNamed:@"commentlist"];
             newsComments.attachment = nDetail;
             newsComments.pubButtonTitle = @"发表评论";
@@ -234,7 +234,7 @@ static char base64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123
             
             TwitterView *twitterView=[[TwitterView alloc] init];
             twitterView.isSoftware=YES;
-            twitterView.tabBarItem.title = @"评论";
+            twitterView.tabBarItem.title = @"CM";
             twitterView.tabBarItem.image = [UIImage imageNamed:@"commentlist"];
             twitterView.attachment = software;
             
@@ -265,7 +265,7 @@ static char base64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123
             
             MessageSystemView * comments = [[MessageSystemView alloc] init];
             comments.parentAuthorUID = news.authoruid2;
-            comments.tabBarItem.title = @"评论";
+            comments.tabBarItem.title = @"CM";
             comments.tabBarItem.image = [UIImage imageNamed:@"commentlist"];
             comments.attachment = blog;
             comments.pubButtonTitle = @"发表评论";
@@ -321,7 +321,7 @@ static char base64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123
     
     MessageSystemView *tweetComments = [[MessageSystemView alloc] init];
     tweetComments.isDisplayRepostToMyZone = YES;
-    tweetComments.tabBarItem.title = @"评论";
+    tweetComments.tabBarItem.title = @"CM";
     tweetComments.tabBarItem.image = [UIImage imageNamed:@"commentlist"];
     tweetComments.attachment = tweetDetail;
     tweetComments.replyLabelTitle = @"评论此回帖";
@@ -710,14 +710,14 @@ static char base64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123
         case 100:
         {
             if (objectCatalog == 0) {
-                _message = [NSString stringWithFormat:@"<light> 更新了动态</light>\n%@", message];
+                _message = [NSString stringWithFormat:@"<light> renewed message</light>\n%@", message];
             }
         }
             break;
         case 101:
         {
             if (objectCatalog == 0) {
-                _message = [NSString stringWithFormat:@"<light> 回复了动态</light> \n%@",message];
+                _message = [NSString stringWithFormat:@"<light> replied message</light> \n%@",message];
             }
         }
             break;
@@ -904,18 +904,18 @@ static char base64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123
             timeString = [timeString substringToIndex:timeString.length-7];
         }
         
-        timeString=[NSString stringWithFormat:@"%@分钟前", timeString];
+        timeString=[NSString stringWithFormat:@"%@ minutes ago", timeString];
     }
     else if (cha/3600>1&&cha/86400<1) {
         timeString = [NSString stringWithFormat:@"%f", cha/3600];
         timeString = [timeString substringToIndex:timeString.length-7];
-        timeString=[NSString stringWithFormat:@"%@小时前", timeString];
+        timeString=[NSString stringWithFormat:@"%@ hours ago", timeString];
     }
     else if (cha/86400>1&&cha/864000<1)
     {
         timeString = [NSString stringWithFormat:@"%f", cha/86400];
         timeString = [timeString substringToIndex:timeString.length-7];
-        timeString=[NSString stringWithFormat:@"%@天前", timeString];
+        timeString=[NSString stringWithFormat:@"%@ days ago", timeString];
     }
     else
     {

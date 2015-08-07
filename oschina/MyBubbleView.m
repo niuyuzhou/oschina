@@ -17,7 +17,7 @@
     //标题
     self.navigationItem.title = self.friendName;
     //留言按钮
-    UIBarButtonItem * bar = [[UIBarButtonItem alloc] initWithTitle:@"给Ta留言" style:UIBarButtonItemStyleBordered target:self action:@selector(clickPubMessage:)];
+    UIBarButtonItem * bar = [[UIBarButtonItem alloc] initWithTitle:@"Notice to" style:UIBarButtonItemStyleBordered target:self action:@selector(clickPubMessage:)];
     self.navigationItem.rightBarButtonItem = bar;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nextBubble:) name:@"NextBubble" object:nil];
@@ -58,7 +58,7 @@
     NSString *url = [NSString stringWithFormat:@"%@?catalog=4&id=%d&pageIndex=%d&pageSize=20", api_comment_list, self.friendID, pageIndex];
     
     MBProgressHUD * hud = [[MBProgressHUD alloc] initWithView:self.view];
-    [Tool showHUD:@"Downloading..." andView:self.view andHUD:hud];
+    [Tool showHUD:@"Loading..." andView:self.view andHUD:hud];
     
     [[AFOSCClient sharedClient] getPath:url parameters:nil
      

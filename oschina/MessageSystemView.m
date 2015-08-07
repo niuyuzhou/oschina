@@ -152,7 +152,7 @@
         [Tool noticeLogin:self.view andDelegate:self andTitle:[Tool getCommentLoginNoticeByCatalog:self.catalog]];
         return;
     }
-    if ([self.pubTitle isEqualToString:@"给Ta留言"])
+    if ([self.pubTitle isEqualToString:@"Notice to"])
     {
         PubMessage *pubMessage = [[PubMessage alloc] init];
         pubMessage.receiverid = receiverid;

@@ -94,7 +94,7 @@
     if ([Config Instance].isNetworkRunning) 
     {
         MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
-        [Tool showHUD:@"Downloading..." andView:self.view andHUD:hud];
+        [Tool showHUD:@"Loading..." andView:self.view andHUD:hud];
         
         NSString *url = [NSString stringWithFormat:@"%@?id=%d",api_news_detail, newsID];
         [[AFOSCClient sharedClient] getPath:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {

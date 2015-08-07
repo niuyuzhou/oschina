@@ -112,10 +112,10 @@
 
 #define IS_IOS7 ([[[UIDevice currentDevice]systemVersion]floatValue]>=7.0)
 
-#define loadNext20Tip @"下面 20 项 . . ."
-#define loadingTip @"Downloading... . . ."
-#define networkError @"网络无连接"
-#define noNetworkTip @"网络无连接"
+#define loadNext20Tip @"Next 20 items . . ."
+#define loadingTip @"Loading... . . ."
+#define networkError @"Connectionless"
+#define noNetworkTip @"Connectionless"
 
 //消息通知固定字符串
 #define Notification_DetailCommentCount @"Notification_DetailCommentCount"

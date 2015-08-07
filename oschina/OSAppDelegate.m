@@ -36,8 +36,11 @@
     UINavigationController * tweetNav = [[UINavigationController alloc] initWithRootViewController:self.tweetBase];
     
     //问答页
+/*
     self.postBase = [[PostBase alloc] initWithNibName:@"PostBase" bundle:nil];
     UINavigationController * postNav = [[UINavigationController alloc] initWithRootViewController:self.postBase];
+*/
+
     
     //动态页;
     self.profileBase = [[ProfileBase alloc] initWithNibName:@"ProfileBase" bundle:nil];
@@ -56,7 +59,7 @@
     self.tabBarController.delegate = self;
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:
                          newsNav,
-                         postNav,
+//                         postNav,
                          tweetNav,
                          profileNav,
                          settingNav,
@@ -77,8 +80,9 @@
     [NdUncaughtExceptionHandler setDefaultHandler];
     
     //注册微信
+/*
     [WXApi registerApp:@"wx41be5fe48092e94c"];
-
+*/
     return YES;
 }
 
@@ -143,6 +147,7 @@
 }
 
 //微信相关
+/*
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
     return [WXApi handleOpenURL:url delegate:self];
@@ -171,7 +176,6 @@
         [alert show];
     }
 }
-
-
+*/
 
 @end

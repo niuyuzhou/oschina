@@ -24,12 +24,12 @@
 {
     self.navigationController.view.backgroundColor = [UIColor grayColor];
     self.tabBarItem.image = [UIImage imageNamed:@"tweet"];
-    self.title = @"动弹";
-    self.tabBarItem.title = @"动弹";
+    self.title = @"Messages";
+    self.tabBarItem.title = @"Messages";
     NSArray *segmentTextContent = [NSArray arrayWithObjects:
-                                   @"最新动弹",
-                                   @"热门动弹",
-                                   @"我的动弹",
+                                   @"Latest",
+                                   @"Hot",
+                                   @"My",
                                    nil];
     self.segment_title = [[UISegmentedControl alloc] initWithItems:segmentTextContent];
     self.segment_title.selectedSegmentIndex = 0;

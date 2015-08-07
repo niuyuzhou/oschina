@@ -23,6 +23,7 @@
 		6DFEFD4C18644DE2004EB774 /* questionBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFEFD4A18644DE2004EB774 /* questionBlue@2x.png */; };
 		6DFEFD4D18644DE2004EB774 /* searchBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFEFD4B18644DE2004EB774 /* searchBlue@2x.png */; };
 		6DFEFD4F18644E43004EB774 /* tweetBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFEFD4E18644E43004EB774 /* tweetBlue@2x.png */; };
+		868727041B71961C00A4A477 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 868727021B71903F00A4A477 /* libzbar.a */; };
 		AB1AEAD018937A9800C607BA /* audio.html in Resources */ = {isa = PBXBuildFile; fileRef = AB1AEACF18937A9800C607BA /* audio.html */; };
 		AB1AEAD418938CFF00C607BA /* jquery-1.7.1.min.js in Sources */ = {isa = PBXBuildFile; fileRef = AB1AEAD318938CFF00C607BA /* jquery-1.7.1.min.js */; };
 		AB1AEAD5189393BA00C607BA /* jquery-1.7.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = AB1AEAD318938CFF00C607BA /* jquery-1.7.1.min.js */; };
@@ -33,7 +34,6 @@
 		AB8E7B8B18AA398E00AFE84D /* 120_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C673091884FA520072D327 /* 120_120.png */; };
 		D661568018D995A800BEBCE1 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D661567F18D995A800BEBCE1 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D661568318DA9C2200BEBCE1 /* Scan.m in Sources */ = {isa = PBXBuildFile; fileRef = D661568218DA9C2200BEBCE1 /* Scan.m */; };
-		D66156A518DDF60400BEBCE1 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D661569D18DDF60400BEBCE1 /* libzbar.a */; };
 		D66156A718DDF60400BEBCE1 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = D66156A018DDF60400BEBCE1 /* zbar-back.png */; };
 		D66156A818DDF60400BEBCE1 /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = D66156A118DDF60400BEBCE1 /* zbar-help.html */; };
 		D66156A918DDF60400BEBCE1 /* zbar-helpicons.png in Resources */ = {isa = PBXBuildFile; fileRef = D66156A218DDF60400BEBCE1 /* zbar-helpicons.png */; };
@@ -424,6 +424,7 @@
 		6DFEFD4A18644DE2004EB774 /* questionBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "questionBlue@2x.png"; sourceTree = "<group>"; };
 		6DFEFD4B18644DE2004EB774 /* searchBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchBlue@2x.png"; sourceTree = "<group>"; };
 		6DFEFD4E18644E43004EB774 /* tweetBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tweetBlue@2x.png"; sourceTree = "<group>"; };
+		868727021B71903F00A4A477 /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
 		AB1AEACF18937A9800C607BA /* audio.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = audio.html; sourceTree = "<group>"; };
 		AB1AEAD318938CFF00C607BA /* jquery-1.7.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.7.1.min.js"; sourceTree = "<group>"; };
 		AB7371C418AA1F38009FCB16 /* share_weixin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_weixin.png; sourceTree = "<group>"; };
@@ -454,7 +455,6 @@
 		D661569A18DDF60400BEBCE1 /* ZBarReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderViewController.h; sourceTree = "<group>"; };
 		D661569B18DDF60400BEBCE1 /* ZBarSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarSDK.h; sourceTree = "<group>"; };
 		D661569C18DDF60400BEBCE1 /* ZBarSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarSymbol.h; sourceTree = "<group>"; };
-		D661569D18DDF60400BEBCE1 /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
 		D66156A018DDF60400BEBCE1 /* zbar-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-back.png"; sourceTree = "<group>"; };
 		D66156A118DDF60400BEBCE1 /* zbar-help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "zbar-help.html"; sourceTree = "<group>"; };
 		D66156A218DDF60400BEBCE1 /* zbar-helpicons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-helpicons.png"; sourceTree = "<group>"; };
@@ -959,9 +959,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				868727041B71961C00A4A477 /* libzbar.a in Frameworks */,
 				D67DF26A18D19ADB00D2236F /* libiconv.dylib in Frameworks */,
 				DACC68D114FF85A0006F7B6A /* QuartzCore.framework in Frameworks */,
-				D66156A518DDF60400BEBCE1 /* libzbar.a in Frameworks */,
 				D67DF26818D19AA900D2236F /* CoreVideo.framework in Frameworks */,
 				D67DF26618D19A9200D2236F /* CoreMedia.framework in Frameworks */,
 				DA5F8635153E4CEC009714C7 /* CoreText.framework in Frameworks */,
@@ -1032,8 +1032,8 @@
 		D661568418DDF60400BEBCE1 /* ZBarSDK */ = {
 			isa = PBXGroup;
 			children = (
+				868727021B71903F00A4A477 /* libzbar.a */,
 				D661568618DDF60400BEBCE1 /* Headers */,
-				D661569D18DDF60400BEBCE1 /* libzbar.a */,
 				D661569F18DDF60400BEBCE1 /* Resources */,
 			);
 			path = ZBarSDK;

@@ -87,7 +87,7 @@
     [self backgroundDown:nil];
     
     NSString *content = self.txtContent.text;
-    if ([content isEqualToString:@""] || [content isEqualToString:@"点击此处输入评论"]) {
+    if ([content isEqualToString:@""] || [content isEqualToString:@"Click here to comment"]) {
         [Tool ToastNotification:@"错误 内容不能为空" andView:self.view andLoading:NO andIsBottom:NO];
         return;
     }

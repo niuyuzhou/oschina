@@ -2,7 +2,7 @@
 //  SearchView.m
 //  oschina
 //
-//  Created by wangjun on 12-5-10.
+//  Created by yuzhou niu on 12-5-10.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
@@ -19,7 +19,7 @@
 {
     allCount = 0;
     [super viewDidLoad];
-    self.navigationItem.title = @"搜索";
+    self.navigationItem.title = @"Search";
     self.view.backgroundColor = [Tool getBackgroundColor];
     self.tableResult.backgroundColor = [Tool getBackgroundColor];
     results = [[NSMutableArray alloc] initWithCapacity:20];
@@ -76,15 +76,9 @@
     NSString * catalog;
     switch (self.segmentSearch.selectedSegmentIndex) {
         case 0:
-            catalog = @"software";
-            break;
-        case 1:
-            catalog = @"post";
-            break;
-        case 2:
             catalog = @"blog";
             break;
-        case 3:
+        case 1:
             catalog = @"news";
             break;
     }

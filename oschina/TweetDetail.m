@@ -20,8 +20,8 @@ bool textViewIsEmpty;
 #pragma mark - 生命周期
 - (void)viewDidAppear:(BOOL)animated
 {
-    self.parentViewController.navigationItem.title = @"动弹详情";
-    UIBarButtonItem *btnComment = [[UIBarButtonItem alloc] initWithTitle:@"发表" style:UIBarButtonItemStyleBordered target:self action:@selector(clickComment:)];
+    self.parentViewController.navigationItem.title = @"Message";
+    UIBarButtonItem *btnComment = [[UIBarButtonItem alloc] initWithTitle:@"Publish" style:UIBarButtonItemStyleBordered target:self action:@selector(clickComment:)];
     self.parentViewController.navigationItem.rightBarButtonItem = btnComment;
     self.view.backgroundColor = [Tool getBackgroundColor];
     
@@ -49,7 +49,7 @@ bool textViewIsEmpty;
     //决定开关
     [self.switchToZone setOn:[Config Instance].getIsPostToMyZone];
     
-    self.txtComment.text = @"点击此处输入评论";
+    self.txtComment.text = @"Click here to comment";
     self.txtComment.textColor = [UIColor lightGrayColor];
     textViewIsEmpty =YES;
     if(IS_IPHONE_5)
@@ -65,8 +65,8 @@ bool textViewIsEmpty;
             self.webView.frame = CGRectMake(0, 0, 313, 375);
     }
 
-    self.title = @"动弹详情";
-    self.tabBarItem.title = @"动弹详情";
+    self.title = @"Message";
+    self.tabBarItem.title = @"Message";
     self.tabBarItem.image = [UIImage imageNamed:@"tweet"];
     
     [Tool clearWebViewBackground:webView];
@@ -74,7 +74,7 @@ bool textViewIsEmpty;
     self.singleTweet = [[Tweet alloc] init];
     
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
-    [Tool showHUD:@"Downloading..." andView:self.view andHUD:hud];
+    [Tool showHUD:@"Loading..." andView:self.view andHUD:hud];
     NSString *url = [NSString stringWithFormat:@"%@?id=%d", api_tweet_detail, tweetID];
     [[AFOSCClient sharedClient] getPath:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
@@ -109,7 +109,7 @@ bool textViewIsEmpty;
             //通知已经获取了帖子回复数 
             Notification_CommentCount *notification = [[Notification_CommentCount alloc] initWithParameters:self andCommentCount:self.singleTweet.commentCount];
             [[NSNotificationCenter defaultCenter] postNotificationName:Notification_DetailCommentCount object:notification];
-            NSString *pubTime = [NSString stringWithFormat:@"在%@ 更新了动态 %@", self.singleTweet.fromNowOn, [Tool getAppClientString:singleTweet.appClient]];
+            NSString *pubTime = [NSString stringWithFormat:@"%@ renewed message %@", self.singleTweet.fromNowOn, [Tool getAppClientString:singleTweet.appClient]];
             
             NSString *imgHtml = @"";
             if ([singleTweet.imgBig isEqualToString:@""] == NO) {
@@ -163,7 +163,7 @@ bool textViewIsEmpty;
         return;
     }
     NSString *content = self.txtComment.text;
-    if ([content isEqualToString:@""] || [content isEqualToString:@"点击此处输入评论"]) {
+    if ([content isEqualToString:@""] || [content isEqualToString:@"Click here to comment"]) {
         [Tool ToastNotification:@"错误 评论内容不能为空" andView:self.view andLoading:NO andIsBottom:NO];
         return;
     }
@@ -268,7 +268,7 @@ bool textViewIsEmpty;
     if(self.txtComment.text.length == 0)
     {
         self.txtComment.textColor = [UIColor lightGrayColor];
-        self.txtComment.text = @"点击此处输入评论";
+        self.txtComment.text = @"Click here to comment";
         textViewIsEmpty = YES;
     }
     [UIView beginAnimations:nil context:NULL];

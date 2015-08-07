@@ -156,7 +156,7 @@
                                             }
                                             if (error.errorCode == 0) {
                                                 NSLog(error.errorMessage);
-                                                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"用户未登录,需要重新登录" delegate:self cancelButtonTitle:@"返回" otherButtonTitles:@"登录", nil];
+                                                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"用户未登录,需要重新登录" delegate:self cancelButtonTitle:@"Return" otherButtonTitles:@"登录", nil];
                                                 [alert show];
                                             }
                                             
@@ -462,16 +462,16 @@
     else {
         switch (self.catalog) {
             case 1:
-                self.parentViewController.navigationItem.title = @"所有";
+                self.parentViewController.navigationItem.title = @"All";
                 break;
             case 2:
-                self.parentViewController.navigationItem.title = @"@我";
+                self.parentViewController.navigationItem.title = @"@Me";
                 break;
             case 3:
-                self.parentViewController.navigationItem.title = @"评论";
+                self.parentViewController.navigationItem.title = @"CM";
                 break;
             case 4:
-                self.parentViewController.navigationItem.title = @"我自己";
+                self.parentViewController.navigationItem.title = @"Myself";
                 break;
         }
 
