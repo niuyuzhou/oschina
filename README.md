@@ -6,13 +6,10 @@ This app provides users with a wide range of channels such as News, Friends, Sea
 User Interface
 --------
 NewsFeed<br/>
-![image](https://github.com/niuyuzhou/oschina/blob/EnglishVersion/screenshot/NewsFeed-News.jpg)
-![image](https://github.com/niuyuzhou/oschina/blob/EnglishVersion/screenshot/NewsFeed-Blogs.jpg)
-![image](https://github.com/niuyuzhou/oschina/blob/EnglishVersion/screenshot/Messages-Search.jpg)<br/>
+![image](https://github.com/niuyuzhou/oschina/blob/EnglishVersion/screenshot/NewsFeed-News.jpg)![image](https://github.com/niuyuzhou/oschina/blob/EnglishVersion/screenshot/NewsFeed-Blogs.jpg)![image](https://github.com/niuyuzhou/oschina/blob/EnglishVersion/screenshot/NewsFeed-Search.jpg)<br/>
 
 Messages<br/>
-![image](https://github.com/niuyuzhou/oschina/blob/EnglishVersion/screenshot/Messages-Latest.jpg)
-![image](https://github.com/niuyuzhou/oschina/blob/EnglishVersion/screenshot/Messages-New.jpg)<br/>
+![image](https://github.com/niuyuzhou/oschina/blob/EnglishVersion/screenshot/Messages-Latest.jpg)![image](https://github.com/niuyuzhou/oschina/blob/EnglishVersion/screenshot/Messages-New.jpg)<br/>
 
 Notification<br/>
 ![image](https://github.com/niuyuzhou/oschina/blob/EnglishVersion/screenshot/Notifications-All.jpg)<br/>
