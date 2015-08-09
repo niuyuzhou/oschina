@@ -27,7 +27,7 @@
     [Tool clearWebViewBackground:webView];
     [self.webView setDelegate:self];
     
-    self.navigationItem.title = @"登录";
+    self.navigationItem.title = @"Login";
     //决定是否显示用户名以及密码
     NSString *name = [Config Instance].getUserName;
     NSString *pwd = [Config Instance].getPwd;
@@ -38,12 +38,12 @@
         self.txt_Pwd.text = pwd;
     }
     
-    UIBarButtonItem *btnLogin = [[UIBarButtonItem alloc] initWithTitle:@"登录" style:UIBarButtonItemStyleBordered target:self action:@selector(click_Login:)];
+    UIBarButtonItem *btnLogin = [[UIBarButtonItem alloc] initWithTitle:@"Login" style:UIBarButtonItemStyleBordered target:self action:@selector(click_Login:)];
     self.navigationItem.rightBarButtonItem = btnLogin;
     self.view.backgroundColor = [Tool getBackgroundColor];
     self.webView.backgroundColor = [Tool getBackgroundColor];
     
-    NSString *html = @"<body style='background-color:#EBEBF3'>1, 您可以在 <a href='http://www.oschina.net'>http://www.oschina.net</a> 上免费注册一个账号用来登陆<p />2, 如果您的账号是使用OpenID的方式注册的，那么建议您在网页上为账号设置密码<p />3, 您可以点击 <a href='http://www.oschina.net/question/12_52232'>这里</a> 了解更多关于手机客户端登录的问题</body>";
+    NSString *html = @"<body style='background-color:#EBEBF3'>1, You could register an account <a href='http://www.oschina.net'>http://www.oschina.net</a> for free to login <p />2, You can click <a href='http://www.oschina.net/question/12_52232'>here</a> to learn more about the mobile client</body>";
     [self.webView loadHTMLString:html baseURL:nil];
     self.webView.hidden = NO;
     

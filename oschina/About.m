@@ -25,7 +25,7 @@
     
     self.lblVersion.text = [NSString stringWithFormat:@"版本: %@", app_build];
     
-    self.navigationItem.title = @"关于我们";
+    self.navigationItem.title = @"About Me";
     
     if (IS_IPHONE_5) {
         self.lblVersion.center = CGPointMake(self.lblVersion.center.x, self.lblVersion.center.y + 88);

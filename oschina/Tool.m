@@ -920,9 +920,10 @@ static char base64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123
     else
     {
 //        timeString = [NSString stringWithFormat:@"%d-%"]
-        NSArray *array = [theDate componentsSeparatedByString:@" "];
+//        NSArray *array = [theDate componentsSeparatedByString:@" "];
 //        return [array objectAtIndex:0];
-        timeString = [array objectAtIndex:0];
+//        timeString = [array objectAtIndex:0];
+        timeString = theDate;
     }
     return timeString;
 }

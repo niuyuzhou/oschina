@@ -445,7 +445,7 @@
                 cell.lbl_Time.text = [NSString stringWithFormat:@"%@ %@", [Tool intervalSinceNow:t.fromNowOn], [Tool getAppClientString:t.appClient]];
                 cell.lblCommentCount.text = [NSString stringWithFormat:@"%d", t.commentCount];
 
-                //添加长按删除功能 
+                //添加长按删除功能 p
                 [cell initGR];
                 [cell setDelegate:self];
             }

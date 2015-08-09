@@ -416,7 +416,7 @@
         else
         {
             if ([Config Instance].isNetworkRunning) {
-                return [[DataSingleton Instance] getLoadMoreCell:tableView andIsLoadOver:isLoadOver andLoadOverString:@"" andLoadingString:[Config Instance].isCookie ? (isLoading ? loadingTip : loadNext20Tip) : @"您还没有登录,无法查看" andIsLoading:isLoading];
+                return [[DataSingleton Instance] getLoadMoreCell:tableView andIsLoadOver:isLoadOver andLoadOverString:@"" andLoadingString:[Config Instance].isCookie ? (isLoading ? loadingTip : loadNext20Tip) : @"You have not Login yet" andIsLoading:isLoading];
             }
             else {
                 return [[DataSingleton Instance] getLoadMoreCell:tableView andIsLoadOver:isLoadOver andLoadOverString:noNetworkTip andLoadingString:noNetworkTip andIsLoading:isLoading];
@@ -426,7 +426,7 @@
     else
     {
         if ([Config Instance].isNetworkRunning) {
-            return [[DataSingleton Instance] getLoadMoreCell:tableView andIsLoadOver:isLoadOver andLoadOverString:@"" andLoadingString:[Config Instance].isCookie ? (isLoading ? loadingTip : loadNext20Tip) : @"您还没有登录,无法查看" andIsLoading:isLoading];
+            return [[DataSingleton Instance] getLoadMoreCell:tableView andIsLoadOver:isLoadOver andLoadOverString:@"" andLoadingString:[Config Instance].isCookie ? (isLoading ? loadingTip : loadNext20Tip) : @"You have not Login yet" andIsLoading:isLoading];
         }
         else {
             return [[DataSingleton Instance] getLoadMoreCell:tableView andIsLoadOver:isLoadOver andLoadOverString:noNetworkTip andLoadingString:noNetworkTip andIsLoading:isLoading];

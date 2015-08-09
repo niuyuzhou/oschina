@@ -90,7 +90,7 @@
     }
     //登录判断
     if ([Config Instance].isCookie == NO) {
-        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"请登录后查看信息" delegate:self cancelButtonTitle:@"Return" destructiveButtonTitle:nil otherButtonTitles:@"登录", nil];
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Please login first " delegate:self cancelButtonTitle:@"Return" destructiveButtonTitle:nil otherButtonTitles:@"Login", nil];
         [sheet showInView:[UIApplication sharedApplication].keyWindow];
     }
     //如果已经登录 则判断是否是刚刚登录  如果是  则刷新
@@ -131,7 +131,7 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
-    if ([buttonTitle isEqualToString:@"登录"]) {
+    if ([buttonTitle isEqualToString:@"Login"]) {
         LoginView *loginView = [[LoginView alloc] init];
         loginView.isPopupByNotice = YES;
         [Config Instance].viewBeforeLogin = self;
