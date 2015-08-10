@@ -1,10 +1,11 @@
 Open Source China
 ==========
-It is the iPhone app for Open Source China which is one of the biggest open source communities in China.
-This app provides users with a wide range of channels such as News, Friends, Search, Tweet and so on.
+It is the iPhone application for Open Source China which is one of the biggest open source communities in China.
+This app provides users with a wide range of channels such as NewsFeed, Messages, Notification and Setting.
 
 User Interface
 --------
+Following pictures are screenshots of the main UI
 NewsFeed<br/>
 ![image](https://github.com/niuyuzhou/oschina/blob/EnglishVersion/screenshot/NewsFeed-News.jpg)![image](https://github.com/niuyuzhou/oschina/blob/EnglishVersion/screenshot/NewsFeed-Blogs.jpg)![image](https://github.com/niuyuzhou/oschina/blob/EnglishVersion/screenshot/NewsFeed-Search.jpg)<br/>
 
