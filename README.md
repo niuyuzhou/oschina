@@ -5,7 +5,7 @@ This app provides users with a wide range of channels such as NewsFeed, Messages
 
 User Interface
 --------
-Following pictures are screenshots of the main UI
+Following pictures are screenshots of the main UI<br/>
 NewsFeed<br/>
 ![image](https://github.com/niuyuzhou/oschina/blob/EnglishVersion/screenshot/NewsFeed-News.jpg)![image](https://github.com/niuyuzhou/oschina/blob/EnglishVersion/screenshot/NewsFeed-Blogs.jpg)![image](https://github.com/niuyuzhou/oschina/blob/EnglishVersion/screenshot/NewsFeed-Search.jpg)<br/>
 
