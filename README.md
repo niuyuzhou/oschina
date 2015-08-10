@@ -21,13 +21,3 @@ Setting<br/>
 Download
 --------
 - Apple App Store : https://itunes.apple.com/au/app/kai-yuan-zhong-guo/id524298520?mt=8
-
-The start-up stream of this project
---------
-declare a UITabBarController in the start-up of OSAppDelegate then fill<br/>
-NewsBase<br/>
-PostBase<br/>
-TweetBase2<br/>
-ProfileBase<br/>
-SettingView<br/>
-into the 5 UITabItems
