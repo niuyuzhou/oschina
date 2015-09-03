@@ -16,7 +16,7 @@
 + (DataSingleton *) Instance;
 + (id)allocWithZone:(NSZone *)zone;
 
-//返回标示Downloading...的选项
+//返回标示DownLoading的选项
 - (UITableViewCell *)getLoadMoreCell:(UITableView *)tableView 
                        andIsLoadOver:(BOOL)isLoadOver 
                        andLoadOverString:(NSString *)loadOverString 

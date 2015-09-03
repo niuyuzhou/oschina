@@ -168,7 +168,7 @@
 			break;
 		case EGOOPullRefreshLoading:
 			
-			_statusLabel.text = NSLocalizedString(@"Loading...", @"Loading Status");
+			_statusLabel.text = NSLocalizedString(@"Loading", @"Loading Status");
 //            _statusLabel.text = @"加载中";
 			[_activityView startAnimating];
 			[CATransaction begin];

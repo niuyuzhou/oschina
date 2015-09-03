@@ -58,7 +58,7 @@
     NSString *url = [NSString stringWithFormat:@"%@?catalog=4&id=%d&pageIndex=%d&pageSize=20", api_comment_list, self.friendID, pageIndex];
     
     MBProgressHUD * hud = [[MBProgressHUD alloc] initWithView:self.view];
-    [Tool showHUD:@"Loading..." andView:self.view andHUD:hud];
+    [Tool showHUD:@"Loading" andView:self.view andHUD:hud];
     
     [[AFOSCClient sharedClient] getPath:url parameters:nil
      

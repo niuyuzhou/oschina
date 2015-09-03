@@ -74,7 +74,7 @@ bool textViewIsEmpty;
     self.singleTweet = [[Tweet alloc] init];
     
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
-    [Tool showHUD:@"Loading..." andView:self.view andHUD:hud];
+    [Tool showHUD:@"Loading" andView:self.view andHUD:hud];
     NSString *url = [NSString stringWithFormat:@"%@?id=%d", api_tweet_detail, tweetID];
     [[AFOSCClient sharedClient] getPath:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         

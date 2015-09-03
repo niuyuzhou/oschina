@@ -113,7 +113,7 @@
 #define IS_IOS7 ([[[UIDevice currentDevice]systemVersion]floatValue]>=7.0)
 
 #define loadNext20Tip @"Next 20 items . . ."
-#define loadingTip @"Loading... . . ."
+#define loadingTip @"Loading . . ."
 #define networkError @"Connectionless"
 #define noNetworkTip @"Connectionless"
 
